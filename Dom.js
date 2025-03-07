@@ -16,6 +16,11 @@ export class element {
 		this._elem = elem;
 		return this;
 	}
+	// gets the inner element
+	get_elem() {
+		return this._elem;
+	}
+
 	// sets the id of the element
 	id(id) {
 		this._elem.id = id;
@@ -31,21 +36,60 @@ export class element {
 		this._elem.innerText = text;
 		return this;
 	}
-	// gets the inner element
-	get_elem() {
-		return this._elem;
+	// gets the text of the element
+	get_text() {
+		return this._elem.innerText;
 	}
+
+	// sets the value of the element
+	value(value) {
+		this._elem.value = value;
+		return this;
+	}
+	// gets the value of the element
+	get_value() {
+		return this._elem.value;
+	}
+
+	// clears the inner html of the element
+	clear() {
+		this._elem.innerHTML = '';
+		return this;
+	}
+
+	// adds an event listener to the element
+	event(event, func) {
+		this._elem.addEventListener(event, func);
+		return this;
+	}
+
 	// appends a child element to the element
 	// the child element must be an instance of this class
 	append_child(child) {
 		this._elem.appendChild(child.get_elem());
 		return this;
 	}
-	
+	pop_child() {
+		this._elem.removeChild(this._elem.lastChild);
+		return this;
+	}
+	// appends a list of children to the element
+	// the children must be instances of this class
+	append_children(children) {
+		for (let child of children) {
+			this.append_child(child);
+		}
+		return this;
+	}
+
 }
 
 export function get_body() {
 	return new element(null).elem(document.body);
+}
+
+export function get_element_by_id(id) {
+	return new element(null).elem(document.getElementById(id));
 }
 
 export function on_page_load(func) {
