@@ -1,22 +1,27 @@
-import * as Dom from '../Dom.js';
+import { element as Element, get_element_by_id, get_body } from "../Dom.js";
+import { on_page_load } from "../Dom.js";
+
+import {local_storage_set} from '../Storage.js';
 
 function click(text) {
 	console.log(text);
-	Dom.get_element_by_id('text').text(text);
-	Dom.get_element_by_id('username').value('ghgh');
+	get_element_by_id('text').text(text);
+	local_storage_set('username', text);
+	window.location.href = 'home.html';
 }
 
-Dom.on_page_load(() =>
+on_page_load(() =>
 {
-	let body = Dom.get_body();
+	let body = get_body();
 	body.append_children([
-		new Dom.element().text('username'),
-		new Dom.element('input').id('username'),
-		new Dom.element().text('password'),
-		new Dom.element('input'),
-		new Dom.element('button').text('login').event('click', function(){ click(Dom.get_element_by_id('username').get_value()); }),
-		new Dom.element('div').id('text').text('')
+		new Element().add_classes(['row', 'w-25', 'gap-3']).append_children([
+			new Element().text('username'),
+			new Element('input').id('username'),
+			new Element().text('password'),
+			new Element('input'),
+			new Element('button').text('login').event('click', function(){ click(get_element_by_id('username').get_value()); }),
+			new Element('div').id('text').text('')
+		])
 	]);
-
 
 });

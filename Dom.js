@@ -82,6 +82,20 @@ export class element {
 		return this;
 	}
 
+	// adds a class to the element
+	add_class(className) {
+		this._elem.classList.add(className);
+		return this;
+	}
+
+	// adds a list of classes to the element
+	add_classes(classNames) {
+		for (let className of classNames) {
+			this.add_class(className);
+		}
+		return this;
+	}
+
 }
 
 export function get_body() {

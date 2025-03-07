@@ -1,9 +1,8 @@
 
-const app_url = "http://localhost:8000/platform/"
 
 export async function request(url, data)
 {
-	let response = await fetch(app_url + url,
+	let response = await fetch(url,
 	{
 		method: "POST",
         headers: {
