@@ -96,6 +96,11 @@ export class element {
 		return this;
 	}
 
+	// gets the first child of the element that matches the query
+	get_element_by_query(query) {
+		return new element(null).elem(this._elem.querySelector(query));
+	}
+	
 }
 
 export function get_body() {
@@ -104,6 +109,9 @@ export function get_body() {
 
 export function get_element_by_id(id) {
 	return new element(null).elem(document.getElementById(id));
+}
+export function get_element_by_query(query) {
+	return new element(null).elem(document.querySelector(query));
 }
 
 export function on_page_load(func) {

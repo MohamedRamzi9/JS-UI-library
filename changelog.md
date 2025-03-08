@@ -1,3 +1,7 @@
+# 08-03-2025 :
+- added `get_element_by_query` function
+- added `get_element_by_query` method to `element` class
+
 # 07-03-2025 :
 - created the project
 - created `element` class 
