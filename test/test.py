@@ -73,8 +73,6 @@ class Term:
 	def __le__(self, other):
 		return Term(LessThanOrEqual(self, other))
 
-]
-
 
 
 expression = (Term("age") > 30) & (Term("age") < 40) | (Term("name") == "John") & (Term("name") != "Doe")

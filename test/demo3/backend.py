@@ -24,43 +24,120 @@ class Task:
 			return self.id == value
 		return False
 
+	def dict(self):
+		return {'name': self.name, 'done': self.done, 'id': self.id}
 
 	def __repr__(self):
 		return f"Task id {self.id} '{self.name}' is '{'done' if self.done else 'not done'}'"
 
-tasks = []
+class List:
+	id = 0
+	def __init__(self, name):
+		self.id = List.id
+		List.id += 1
+		self.name = name
+		self.tasks = []
+
+	def add_task(self, task):
+		self.tasks.append(task)
+
+	def remove_task(self, task):
+		self.tasks.remove(task)
+
+	def get_task(self, id):
+		for t in self.tasks:
+			if t.id == id:
+				return t
+			
+	def get_tasks(self):
+		return self.tasks
+	
+	def dict(self):
+		return {'name': self.name, 'id': self.id} 
+
+class Data:
+	def __init__(self):
+		self.lists = []
+
+	def add_list(self, name):
+		self.lists.append(name)
+
+	def get_list(self, id):
+		for l in self.lists:
+			if l.id == id:
+				return l
+
+	def remove_list(self, id):
+		self.lists.remove(self.get_list(id))
+
+	def get_lists(self):
+		return self.lists
+
+data = Data()
+current_list: List|None = None
+
+def get_list(id):
+	for l in data.get_lists():
+		if l.id == id:
+			return l
+
 
 def get_json(message):
 	return json.loads(message)
 
+
 def dispatch(json):
 
 	def get_tasks():
-		print(f"Get tasks {tasks}")
-		tasks_json = [{'id': task.id, 'name': task.name, 'done': task.done} for task in tasks]
-		return {'tasks': tasks_json}
+		print(f"Get tasks")
+		tasks_json = []
+		if current_list is not None:
+			for task in current_list.get_tasks():
+				tasks_json.append(task.dict())
+		return {'type': 'tasks', 'tasks': tasks_json}
+
+	def get_lists():
+		lists_json = []
+		for l in data.get_lists():
+			lists_json.append(l.dict())
+		print(lists_json)
+		return {'type': 'lists', 'lists': lists_json}
+		
+	request = json['type']
+
+	global current_list
+
+	if request == 'get_lists':
+		return get_lists()
 	
-
-	if json['type'] == 'get_tasks':
+	elif request == 'get_tasks':
 		return get_tasks()
+	
+	elif request == 'add_list':
+		print("Add list")
+		data.add_list(List(json['name']))
+		return get_lists()
 
-	elif json['type'] == 'add_task':
+	elif request == 'add_task':
 		print("Add task")
-		tasks.append(Task(json['name']))
+		current_list.add_task(Task(json['name']))
 		return get_tasks()
 
-	elif json['type'] == 'delete_task':
+	elif request == 'delete_task':
 		print(f"Delete task {json['id']}")
-		tasks.pop(tasks.index(json['id']))
+		task = current_list.get_task(json['id'])
+		current_list.remove_task(task)
 		return get_tasks()
 
-	elif json['type'] == 'set_task_done':
-		print(f"Set task {json['name']} to {json['done']}")
-		for task in tasks:
-			if task.name == json['name']:
-				task.done = json['done']
-				break
+	elif request == 'set_current_list':
+		current_list = get_list(json['id'])
 		return get_tasks()
+
+	elif request == 'set_task_done':
+		task = current_list.get_task(json['id'])
+		task.done = json['done']
+		return get_tasks()
+
 
 def new_client(client, server):
 	print("New client connected and was given id %d" % client['id'])
