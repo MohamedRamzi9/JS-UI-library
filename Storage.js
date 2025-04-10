@@ -1,13 +1,13 @@
 
-export function local_storage_set(key, value) {
+export function set_local_storage(key, value) {
 	localStorage.setItem(key, value);
 }
 
-export function local_storage_get(key) {
-	return localStorage.getItem(key);
+export function get_local_storage(key) {
+	return JSON.parse(localStorage.getItem(key));
 }
 
-export function local_storage_remove(key) {
+export function remove_local_storage(key) {
 	localStorage.removeItem(key);
 }
 

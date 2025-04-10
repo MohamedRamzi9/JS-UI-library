@@ -2,10 +2,6 @@
 // this is a wrapper class to create ui elements in javascript
 // it is a simple class that wraps around the html element class
 export class element {
-	static _to_element(elem) {
-		return new element(null).elem(elem);
-	}
-
 	// creates a new html element
 	// if tagName is null, the element is not initialized
 	// else the element is initialized with the tagName
@@ -85,7 +81,17 @@ export class element {
 		}
 		return this;
 	}
-
+	// replaces a child element with a new child element
+	// the child element must be an instance of this class
+	replace_child(oldChild, newChild) {
+		this._elem.replaceChild(newChild.get_elem(), oldChild.get_elem());
+		return this;
+	}
+	// rmeoves a child element by index
+	remove_child_by_index(index) {
+		this._elem.removeChild(this._elem.children[index]);
+		return this;
+	}
 	// removes a child element from the element
 	// the child element must be an instance of this class
 	remove_child(child) {
@@ -98,42 +104,50 @@ export class element {
 		this._elem.classList.add(className);
 		return this;
 	}
-
 	// adds a list of classes to the element
 	add_classes(classNames) {
-		for (let className of classNames) {
+		for (let className of classNames)
 			this.add_class(className);
-		}
+		return this;
+	}
+	// removes a class from the element
+	remove_class(className) {
+		this._elem.classList.remove(className);
+		return this;
+	}
+	// clears all classes from the element
+	clear_classes() {
+		this._elem.className = '';
 		return this;
 	}
 
 	// gets the first element by query from _elem
 	get_element_by_query(query) {
-		return element._to_element(this._elem.querySelector(query));
+		return _to_element(this._elem.querySelector(query));
 	}
 
 	// gets all elements by query from _elem
 	get_elements_by_query(query) {
 		return [...this._elem.querySelectorAll(query)]
-			.map(elem => element._to_element(elem));
+			.map(elem => _to_element(elem));
 	}
 
 	// gets all elements by class from _elem
 	get_elements_by_class(className) {
 		return [...this._elem.getElementsByClassName(className)]
-			.map(elem => element._to_element(elem));
+			.map(elem => _to_element(elem));
 	}
 
 	// gets all elements by tag from _elem
 	get_elements_by_tag(tagName) {
 		return [...this._elem.getElementsByTagName(tagName)]
-			.map(elem => element._to_element(elem));
+			.map(elem => _to_element(elem));
 	}
 
 	// gets all elements by name from _elem
 	get_elements_by_name(name) {
 		return [...this._elem.geteleme(name)]
-			.map(elem => element._to_element(elem));
+			.map(elem => _to_element(elem));
 	}
 }
 
@@ -141,8 +155,12 @@ export class element {
 export function make_element(tagName='div') {
 	return new element(tagName);
 }
+export let div = () => new element('div');
+export let button = () => new element('button');
 
-let _to_element = element._to_element;
+function _to_element(elem) {
+	return new element(null).elem(elem);
+}
 
 // gets the body element
 export function get_body() {

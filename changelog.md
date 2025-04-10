@@ -1,3 +1,6 @@
+# 31-03-2025 :
+- added `clear_classes, remove_class, remove_child_by_index, replace_child` methods to `element` class
+
 # 09-03-2025 :
 - added `get_elements_by_class, get_elements_by_tag, get_elements_by_query, get_elements_by_name, _to_element, make_element` functions
 - added `get_elements_by_class, get_elements_by_tag, get_elements_by_query, get_elements_by_name, _to_element` methods to `element` class
