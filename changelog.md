@@ -1,3 +1,10 @@
+# 15-04-2025 :
+- renamed `_to_element` to `to_element` and made it a public method
+- added `html, name, get_name` method to `element` class
+- renamed `append_children` to `add_children`, `append_child` to `add_child` methods in `element` class
+- added `readme.md` file
+
+
 # 31-03-2025 :
 - added `clear_classes, remove_class, remove_child_by_index, replace_child` methods to `element` class
 

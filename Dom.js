@@ -4,7 +4,7 @@
 export class element {
 	// creates a new html element
 	// if tagName is null, the element is not initialized
-	// else the element is initialized with the tagName
+	// else the element is initialized with a new html element with tagName
 	constructor(tagName='div') {
 		if (tagName == null) 
 			this._elem = null;
@@ -51,9 +51,25 @@ export class element {
 		return this._elem.value;
 	}
 
+	// sets the name of the element
+	name(name) {
+		this._elem.name = name;
+		return this;
+	}
+	// gets the name of the element
+	get_name() {
+		return this._elem.name;
+	}
+
 	// clears the inner html of the element
 	clear() {
 		this._elem.innerHTML = '';
+		return this;
+	}
+
+	// sets the inner html of the element
+	html(html) {
+		this._elem.innerHTML = html;
 		return this;
 	}
 
@@ -65,7 +81,7 @@ export class element {
 
 	// appends a child element to the element
 	// the child element must be an instance of this class
-	append_child(child) {
+	add_child(child) {
 		this._elem.appendChild(child.get_elem());
 		return this;
 	}
@@ -75,9 +91,9 @@ export class element {
 	}
 	// appends a list of children to the element
 	// the children must be instances of this class
-	append_children(children) {
+	add_children(children) {
 		for (let child of children) {
-			this.append_child(child);
+			this.add_child(child);
 		}
 		return this;
 	}
@@ -123,85 +139,89 @@ export class element {
 
 	// gets the first element by query from _elem
 	get_element_by_query(query) {
-		return _to_element(this._elem.querySelector(query));
+		return to_element(this._elem.querySelector(query));
 	}
 
 	// gets all elements by query from _elem
 	get_elements_by_query(query) {
 		return [...this._elem.querySelectorAll(query)]
-			.map(elem => _to_element(elem));
+			.map(elem => to_element(elem));
 	}
 
 	// gets all elements by class from _elem
 	get_elements_by_class(className) {
 		return [...this._elem.getElementsByClassName(className)]
-			.map(elem => _to_element(elem));
+			.map(elem => to_element(elem));
 	}
 
 	// gets all elements by tag from _elem
 	get_elements_by_tag(tagName) {
 		return [...this._elem.getElementsByTagName(tagName)]
-			.map(elem => _to_element(elem));
+			.map(elem => to_element(elem));
 	}
 
 	// gets all elements by name from _elem
 	get_elements_by_name(name) {
 		return [...this._elem.geteleme(name)]
-			.map(elem => _to_element(elem));
+			.map(elem => to_element(elem));
 	}
 }
 
-// a helper function for new element(tagName)
+// a helper function creating new element
+// equivilant to : new element(tagName)
 export function make_element(tagName='div') {
 	return new element(tagName);
 }
-export let div = () => new element('div');
-export let button = () => new element('button');
+export let div = () => make_element('div');
+export let button = () => make_element('button');
 
-function _to_element(elem) {
+// a helper function to convert an html element to an element object
+// equivilant to : new element().elem(elem)
+export function to_element(elem) {
 	return new element(null).elem(elem);
 }
 
 // gets the body element
 export function get_body() {
-	return _to_element(document.body);
+	return to_element(document.body);
 }
 
 // gets an element by id from the document
 export function get_element_by_id(id) {
-	return _to_element(document.getElementById(id));
+	return to_element(document.getElementById(id));
 }
 
-// gets the first element by query from the document
+// gets the first element by query from the document and returns it as an element object
 export function get_element_by_query(query) {
-	return _to_element(document.querySelector(query));
+	return to_element(document.querySelector(query));
 }
 
 
-// gets all elements by query from the document
+// gets all elements by query from the document and returns them as an array of element objects
 export function get_elements_by_query(query) {
 	return [...document.querySelectorAll(query)]
-		.map(elem => _to_element(elem));
+		.map(elem => to_element(elem));
 }
 
-// gets all elements by class from the document
+// gets all elements by class from the document and returns them as an array of element objects
 export function get_elements_by_class(className) {
 	return [...document.getElementsByClassName(className)]
-		.map(elem => _to_element(elem));
+		.map(elem => to_element(elem));
 }
 
-// gets all elements by tag from the document
+// gets all elements by tag from the document and returns them as an array of element objects
 export function get_elements_by_tag(tagName) {
 	return [...document.getElementsByTagName(tagName)]
-		.map(elem => _to_element(elem));
+		.map(elem => to_element(elem));
 }
 
-// gets all elements by name from the document
+// gets all elements by name from the document and returns them as an array of element objects
 export function get_elements_by_name(name) {
 	return [...document.getElementsByName(name)]
-		.map(elem => _to_element(elem));
+		.map(elem => to_element(elem));
 }
 
+// runs the function when the page loads
 export function on_page_load(func) {
 	window.onload = func;
 }
