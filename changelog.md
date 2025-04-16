@@ -1,3 +1,7 @@
+# 16-04-2025 :
+- added `parent, get_parent, remove_parent, swap_parent, is_null` methods to `element` class
+
+
 # 15-04-2025 :
 - renamed `_to_element` to `to_element` and made it a public method
 - added `html, name, get_name` method to `element` class

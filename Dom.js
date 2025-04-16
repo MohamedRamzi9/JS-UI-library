@@ -11,6 +11,11 @@ export class element {
 		else
 			this._elem = document.createElement(tagName);
 	} 
+	// returns true if the element is not initialized
+	is_null() {
+		return this._elem == null;
+	}
+
 	// sets the inner element to elem
 	elem(elem) {
 		this._elem = elem;
@@ -114,6 +119,34 @@ export class element {
 		this._elem.removeChild(child.get_elem());
 		return this;
 	}
+
+	// add this element as a child to another element
+	parent(parent) {
+		parent.add_child(this);
+		return this;
+	}
+	// get the parent of this element
+	get_parent() {
+		return to_element(this._elem.parentNode);
+	}
+	// removes this element from its parent
+	remove_parent() {
+		let parent = this.get_parent();
+		if (!parent.is_null()) {
+			parent.remove_child(this);
+		}
+		return this;
+	}
+	// swaps the parent of this element with another element
+	swap_parent(newParent) {
+		let parent = this.get_parent();
+		if (!parent.is_null()) {
+			parent.remove_child(this);
+		}
+		this.parent(newParent);
+		return this;
+	}
+
 
 	// adds a class to the element
 	add_class(className) {
