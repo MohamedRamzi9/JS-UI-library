@@ -1,5 +1,6 @@
 # 17-04-2025 :
 - updated demo1 
+- renamed `make_element` to `elem` 
 
 # 16-04-2025 :
 - added `parent, get_parent, remove_parent, swap_parent, is_null` methods to `element` class

@@ -18,22 +18,20 @@ header {
 
 }
 
-#tasks {
+tasks {
 	display: flex;
 	flex-direction: row;
 	gap: 10px;
 	flex-wrap: wrap;
-
 }
 
 task-container {
 	display: flex;
 	flex-direction: column;
 	width: fit-content;
+	height: fit-content;
 	padding: 10px;
 	background-color: #6db0ac;
-	/* border: 1px solid #000; */
-	/* align-items: center; */
 	border-radius: 10px;
 	font-family: Helvetica;
 

@@ -202,11 +202,11 @@ export class element {
 
 // a helper function creating new element
 // equivilant to : new element(tagName)
-export function make_element(tagName='div') {
+export function elem(tagName='div') {
 	return new element(tagName);
 }
-export let div = () => make_element('div');
-export let button = () => make_element('button');
+export let div = () => elem('div');
+export let button = () => elem('button');
 
 // a helper function to convert an html element to an element object
 // equivilant to : new element().elem(elem)
