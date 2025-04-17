@@ -1,11 +1,64 @@
+body {
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: column;
 
+
+	input, button {
+		/* border: none; */
+		margin: 5px 0;
+		padding: 5px;
+		width: 400px;
+	}
+}
+
+header {
+	all: unset;
+	font-size: xx-large;
+
+}
+
+#tasks {
+	display: flex;
+	flex-direction: row;
+	gap: 10px;
+	flex-wrap: wrap;
+
+}
 
 task-container {
 	display: flex;
 	flex-direction: column;
-	width: 200px;
-	border: 1px solid #000;
-	align-items: center;
-	margin: 5px 0;
+	width: fit-content;
+	padding: 10px;
+	background-color: #6db0ac;
+	/* border: 1px solid #000; */
+	/* align-items: center; */
+	border-radius: 10px;
+	font-family: Helvetica;
+
+	title {
+		all: unset;
+		font-size: 24px;
+		font-weight: bold;
+		color: #ffffff;
+	}
+
+	description {
+		margin: 5px 0;
+		font-size: 16px;
+		color: #fff;
+	}
+
+	button {
+		all: unset;
+		padding: 5px 10px;
+		color: #fff;
+		cursor: pointer;
+		background-color: brown;
+		border: none;
+		border-radius: 5px;
+		text-align: center;
+	}
 
 }

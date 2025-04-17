@@ -9,6 +9,8 @@ the library is structured as a collection of self contained files, each file con
 this file contains the following functionnalities :
 - ### element class 
 this class is wrapper around the native DOM element, it provides a simple way to create and manipulate DOM elements
+all the methods that are prefixed with `get_` are getters
+all the methods that are named after an attribute are setters for example `id, text, value...` for shortening the code, all the setters return the element itself to allow chaining for example `div().id('my_id').text('my_text')...`
 - ### make_element function
 this is helper function to create an element, then there are functions that have the same name of the common used elements like div(), button(), ect.
 - ### get_element_by_... functions
