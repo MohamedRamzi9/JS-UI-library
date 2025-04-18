@@ -25,5 +25,8 @@ this file contains functions to handle send `POST` requests using the fetch API.
 ## WebSocket.js
 this file contains functions to create a websocket connection and send messages to the server.
 
+## Component.js
+this file contains components that group together multiple elements and provide methods to customize them to quickly create UI.
+
 ## demos
 this folder contains multiple examples of how to use the library, each example is self contained and can be run independently.

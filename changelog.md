@@ -3,6 +3,7 @@
 - added `get_head, style` function
 - created `Component.js` file
 	- added `login_component` class
+	- added it to the list of files in readme.md
 - added `todo.md` file
 
 
