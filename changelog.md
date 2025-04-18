@@ -1,3 +1,11 @@
+# 18-04-2025 :
+- added `get_child_by_index, placeholder` method to `element` class
+- added `get_head, style` function
+- created `Component.js` file
+	- added `login_component` class
+- added `todo.md` file
+
+
 # 17-04-2025 :
 - updated demo1 
 - renamed `make_element` to `elem` 

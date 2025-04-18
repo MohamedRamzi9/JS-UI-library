@@ -56,6 +56,12 @@ export class element {
 		return this._elem.value;
 	}
 
+	// sets the placeholder of the element
+	placeholder(placeholder) {
+		this._elem.placeholder = placeholder;
+		return this;
+	}
+
 	// sets the name of the element
 	name(name) {
 		this._elem.name = name;
@@ -82,6 +88,11 @@ export class element {
 	event(event, func) {
 		this._elem.addEventListener(event, func);
 		return this;
+	}
+
+	// gets a child by index
+	get_child_by_index(index) {
+		return to_element(this._elem.children[index]);
 	}
 
 	// appends a child element to the element
@@ -147,7 +158,6 @@ export class element {
 		return this;
 	}
 
-
 	// adds a class to the element
 	add_class(className) {
 		this._elem.classList.add(className);
@@ -198,6 +208,14 @@ export class element {
 		return [...this._elem.geteleme(name)]
 			.map(elem => to_element(elem));
 	}
+
+	// sets the style of the element
+	style(style) {
+		for (let key in style) {
+			this._elem.style[key] = style[key];
+		}
+		return this;
+	}
 }
 
 // a helper function creating new element
@@ -207,6 +225,8 @@ export function elem(tagName='div') {
 }
 export let div = () => elem('div');
 export let button = () => elem('button');
+export let input = () => elem('input');
+export let style = () => elem('style');
 
 // a helper function to convert an html element to an element object
 // equivilant to : new element().elem(elem)
@@ -217,6 +237,10 @@ export function to_element(elem) {
 // gets the body element
 export function get_body() {
 	return to_element(document.body);
+}
+// gets the head element
+export function get_head() {
+	return to_element(document.head);
 }
 
 // gets an element by id from the document
