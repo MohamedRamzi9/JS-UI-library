@@ -1,3 +1,7 @@
+# 19-04-2025 :
+- added `get_children_count` method to `element` class
+- added `username_error, password_error, clear_error` methods to `login_component` class
+
 # 18-04-2025 :
 - added `get_child_by_index, placeholder` method to `element` class
 - added `get_head, style` function

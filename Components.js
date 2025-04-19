@@ -53,6 +53,31 @@ export class login_component {
 		return this;
 	}
 
+	// sets the error message of the username field
+	username_error(text) {
+		if (this.username_part.get_children_count() > 2) 
+			this.username_part.get_child_by_index(2).text(text);
+		else 
+			this.username_part.add_child(dom.elem('username-error').text(text));
+		return this;
+	}
+	// sets the error message of the password field
+	password_error(text) {
+		if (this.password_part.get_children_count() > 2) 
+			this.password_part.get_child_by_index(2).text(text);
+		else 
+			this.password_part.add_child(dom.elem('password-error').text(text));
+		return this;
+	}
+	// clears the errors
+	clear_errors() {
+		if (this.username_part.get_children_count() > 2) 
+			this.username_part.get_child_by_index(2).clear();
+		if (this.password_part.get_children_count() > 2) 
+			this.password_part.get_child_by_index(2).clear();
+		return this;
+	}
+
 	// returns the inner html of the login component
 	get_elem() { return this.login_component.get_elem(); }
 
@@ -82,6 +107,14 @@ export class login_component {
 			padding: 5px;
 			border-radius: 5px;
 			cursor: pointer;
+			user-select: none;
+		}
+		
+		username-error, password-error {
+			color: red;
+			font-size: 12px;
 		}
 	`
 }
+
+

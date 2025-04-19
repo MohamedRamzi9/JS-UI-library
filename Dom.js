@@ -130,6 +130,10 @@ export class element {
 		this._elem.removeChild(child.get_elem());
 		return this;
 	}
+	// get the number of children of the element
+	get_children_count() {
+		return this._elem.children.length;
+	}
 
 	// add this element as a child to another element
 	parent(parent) {
