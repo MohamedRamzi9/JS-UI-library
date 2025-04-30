@@ -82,6 +82,16 @@ export class element {
 		return this._elem.type;
 	}
 
+	// sets the given attribute of the element
+	attr(name, value) {
+		this._elem.setAttribute(name, value);
+		return this;
+	}
+	// gets the given attribute of the element
+	get_attr(name) {
+		return this._elem.getAttribute(name);
+	}
+
 	// clears the inner html of the element
 	clear() {
 		this._elem.innerHTML = '';
@@ -101,7 +111,9 @@ export class element {
 	}
 
 	// gets a child by index
-	get_child_by_index(index) {
+	get_child_at(index) {
+		let children_count = this.get_children_count();
+		if (index < 0) index = children_count + index; 
 		return to_element(this._elem.children[index]);
 	}
 
@@ -130,7 +142,7 @@ export class element {
 		return this;
 	}
 	// rmeoves a child element by index
-	remove_child_by_index(index) {
+	remove_child_at(index) {
 		this._elem.removeChild(this._elem.children[index]);
 		return this;
 	}
@@ -140,6 +152,7 @@ export class element {
 		this._elem.removeChild(child.get_elem());
 		return this;
 	}
+
 	// get the number of children of the element
 	get_children_count() {
 		return this._elem.children.length;

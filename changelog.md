@@ -1,5 +1,8 @@
 # 30-04-2025 :
-- added `type, get_type` method to `element` class
+- added `type, get_type, attr, get_attr` method to `element` class
+- rename `get_child_by_index` to `get_child_at`, `remove_child_by_index` to `remove_child_at` methods in `element` class
+- added negative index support to `get_child_at` method in `element` class
+- added _ to all attribute members of `WebSocket` class
 
 # 22-04-2025 :
 - added `URL.js` file
