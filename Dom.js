@@ -270,6 +270,7 @@ export let div = () => elem('div');
 export let button = () => elem('button');
 export let input = () => elem('input');
 export let style = () => elem('style');
+export let label = () => elem('label');
 
 // a helper function to convert an html element to an element object
 // equivilant to : new element().elem(elem)

@@ -1,5 +1,6 @@
 # -01-05-2025 :
 - added `insert_child_at, insert_child_before, insert_child_after` methods to `element` class
+- added `label` function to `Dom.js` file
 
 # 30-04-2025 :
 - added `type, get_type, attr, get_attr` method to `element` class
