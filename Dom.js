@@ -91,6 +91,16 @@ export class element {
 	get_attr(name) {
 		return this._elem.getAttribute(name);
 	}
+	// sets the selected attribute of the element
+	selected(selected) {
+		this._elem.selected = selected;
+		return this;
+	}
+	// gets the selected attribute of the element
+	get_selected() {
+		this._elem.child
+		return this._elem.selected;
+	}
 
 	// clears the inner html of the element
 	clear() {
@@ -108,6 +118,25 @@ export class element {
 	event(event, func) {
 		this._elem.addEventListener(event, func);
 		return this;
+	}
+
+	// sets the first child of the element
+	first_child(child) {
+		this._elem.firstChild = child.get_elem();
+		return this;
+	}
+	// gets the first child of the element
+	get_first_child() {
+		return to_element(this._elem.firstChild);
+	}
+	// sets the last child of the element
+	last_child(child) {
+		this._elem.lastChild = child.get_elem();
+		return this;
+	}
+	// gets the last child of the element
+	get_last_child() {
+		return to_element(this._elem.lastChild);
 	}
 
 	// gets a child by index
