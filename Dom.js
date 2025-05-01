@@ -117,6 +117,11 @@ export class element {
 		return to_element(this._elem.children[index]);
 	}
 
+	// gets all children of the element
+	get_children() {
+		return [...this._elem.children].map(elem => to_element(elem));
+	}
+
 	// appends a child element to the element
 	// the child element must be an instance of this class
 	add_child(child) {
