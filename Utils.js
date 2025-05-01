@@ -16,5 +16,8 @@ export function bool(value) {
 
 // convert a value to a string
 export function str(value) {
+	if (typeof value === 'object') {
+		return JSON.stringify(value);
+	}
 	return value.toString();
 }
