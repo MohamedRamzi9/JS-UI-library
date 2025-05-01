@@ -315,6 +315,7 @@ export let input = () => elem('input');
 export let style = () => elem('style');
 export let label = () => elem('label');
 export let select = () => elem('select');
+export let option = () => elem('option');
 
 // a helper function to convert an html element to an element object
 // equivilant to : new element().elem(elem)
