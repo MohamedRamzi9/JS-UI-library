@@ -2,6 +2,8 @@
 - added `insert_child_at, insert_child_before, insert_child_after, selected, get_selected, first_child, get_first_child, last_child, get_last_child, checked, get_checked` methods to `element` class
 - added `label` function to `Dom.js` file
 - added `select, option` function to `Dom.js` file
+- added `Util.js` file
+	- added `int, float, str, bool` functions
 
 # 30-04-2025 :
 - added `type, get_type, attr, get_attr` method to `element` class
