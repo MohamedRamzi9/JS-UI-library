@@ -101,6 +101,16 @@ export class element {
 		return this._elem.selected;
 	}
 
+	// sets the checked attribute of the element
+	checked(checked) {
+		this._elem.checked = checked;
+		return this;
+	}
+	// gets the checked attribute of the element
+	get_checked() {
+		return this._elem.checked;
+	}
+
 	// clears the inner html of the element
 	clear() {
 		this._elem.innerHTML = '';
