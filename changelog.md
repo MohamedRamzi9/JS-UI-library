@@ -1,3 +1,6 @@
+# -01-05-2025 :
+- added `insert_child_at, insert_child_before, insert_child_after` methods to `element` class
+
 # 30-04-2025 :
 - added `type, get_type, attr, get_attr` method to `element` class
 - rename `get_child_by_index` to `get_child_at`, `remove_child_by_index` to `remove_child_at` methods in `element` class

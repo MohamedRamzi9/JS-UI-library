@@ -153,6 +153,22 @@ export class element {
 		return this;
 	}
 
+	// insert a child element at a specific index
+	insert_child_at(index, child) {
+		this._elem.insertBefore(child.get_elem(), this.get_child_at(index).get_elem());
+		return this;
+	}
+	// insert a child element before another child element
+	insert_child_before(child, beforeChild) {
+		this._elem.insertBefore(child.get_elem(), beforeChild.get_elem());
+		return this;
+	}
+	// insert a child element after another child element
+	insert_child_after(child, afterChild) {
+		this._elem.insertBefore(child.get_elem(), afterChild.get_elem().nextSibling);
+		return this;
+	}
+
 	// get the number of children of the element
 	get_children_count() {
 		return this._elem.children.length;
