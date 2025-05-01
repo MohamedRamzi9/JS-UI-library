@@ -98,7 +98,6 @@ export class element {
 	}
 	// gets the selected attribute of the element
 	get_selected() {
-		this._elem.child
 		return this._elem.selected;
 	}
 
