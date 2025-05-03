@@ -49,3 +49,12 @@ export function push_state(path, state={}, title='') {
 	history.pushState(state, title, path);
 }
 
+// gets the current state of the page
+export function get_state() {
+	return history.state;
+}
+
+// sets the onpopstate event handler that takes the event as an argument
+export function on_pop_state(func) {
+	window.onpopstate = func;
+}
