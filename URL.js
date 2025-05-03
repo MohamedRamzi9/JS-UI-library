@@ -21,7 +21,9 @@ export function url() {
 
 // sets the pathname of the current url without the leading slash
 export function goto_path(path) {
-	location.pathname = '/' + path;
+	if (path[0] !== '/') 
+		path = '/' + path;
+	location.pathname = path;
 }
 
 // sets the full url of the current page
@@ -29,9 +31,21 @@ export function goto_url(url) {
 	location.href = url;
 }
 
-// sets the current state of the page, url doesn't have to start with a slash
-export function set_state(state, url, title='') {
-	if (url[0] !== '/') 
-		url = '/' + url;
-	history.pushState(state, title, url);
+function format_path(path) {
+	if (path[0] !== '/') 
+		path = '/' + path;
+	return path;
 }
+
+// sets the current state of the page, url doesn't have to start with a slash
+export function set_state(path, state={}, title='') {
+	path = format_path(path);
+	history.replaceState(state, title, path);
+}
+
+// pushes a new state to the history stack
+export function push_state(path, state={}, title='') {
+	path = format_path(path);
+	history.pushState(state, title, path);
+}
+
