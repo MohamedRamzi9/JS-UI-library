@@ -9,3 +9,13 @@ export function to_string(json) {
 export function to_json(string) {
 	return Object.fromEntries(new URLSearchParams(string).entries());
 }
+
+// return the pathhname of the current url without the leading slash
+export function get_pathname(url) {
+	return location.pathname.replaceAll("/", '');
+}
+
+// set the pathhname of the current url without the leading slash
+export function set_pathname(pathname) {
+	location.pathname = '/' + pathname;
+}
