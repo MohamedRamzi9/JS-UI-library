@@ -28,3 +28,10 @@ export function goto_path(path) {
 export function goto_url(url) {
 	location.href = url;
 }
+
+// sets the current state of the page, url doesn't have to start with a slash
+export function set_state(state, url, title='') {
+	if (url[0] !== '/') 
+		url = '/' + url;
+	history.pushState(state, title, url);
+}
