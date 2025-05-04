@@ -82,6 +82,17 @@ export class element {
 		return this._elem.type;
 	}
 
+	// sets the src attribute of the element
+	src(src) {
+		this._elem.src = src;
+		return this;
+	}
+	// gets the src attribute of the element
+	get_src() {
+		return this._elem.src;
+	}
+
+
 	// sets the given attribute of the element
 	attr(name, value) {
 		this._elem.setAttribute(name, value);
