@@ -1,5 +1,5 @@
 # 04-05-2025 :
-- added `src, get_src` method to `element` class
+- added `src, get_src, background_image, get_background_image` method to `element` class
 
 # 03-05-2025 :
 - added `path, url, goto_path, goto_url, push_state, set_state, get_state, format_path, on_pop_state` functions to `URL` class

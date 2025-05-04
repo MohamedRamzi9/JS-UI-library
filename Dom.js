@@ -92,6 +92,15 @@ export class element {
 		return this._elem.src;
 	}
 
+	// sets the background image of the element
+	background_image(src) {
+		this._elem.style.backgroundImage = `url(${src})`;
+		return this;
+	}
+	// gets the background image of the element
+	get_background_image() {
+		return this._elem.style.backgroundImage;
+	}
 
 	// sets the given attribute of the element
 	attr(name, value) {
