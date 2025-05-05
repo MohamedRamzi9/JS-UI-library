@@ -1,3 +1,7 @@
+
+# 05-05-2025 :
+- added `ws` attribute and `send` method to `WebSocket` class and changed `connect` method to return `this` instead of `ws`
+
 # 04-05-2025 :
 - added `src, get_src, background_image, get_background_image` method to `element` class
 
