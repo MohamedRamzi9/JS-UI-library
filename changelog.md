@@ -1,4 +1,9 @@
 
+# 12-05-2025 :
+- added `height, get_height, swap_classes` methods to `element` class
+
+
+
 # 05-05-2025 :
 - added `ws` attribute and `send` method to `WebSocket` class and changed `connect` method to return `this` instead of `ws`
 

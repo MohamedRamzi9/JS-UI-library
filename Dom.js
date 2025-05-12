@@ -92,16 +92,6 @@ export class element {
 		return this._elem.src;
 	}
 
-	// sets the background image of the element
-	background_image(src) {
-		this._elem.style.backgroundImage = `url(${src})`;
-		return this;
-	}
-	// gets the background image of the element
-	get_background_image() {
-		return this._elem.style.backgroundImage;
-	}
-
 	// sets the given attribute of the element
 	attr(name, value) {
 		this._elem.setAttribute(name, value);
@@ -285,6 +275,12 @@ export class element {
 		this._elem.className = '';
 		return this;
 	}
+	// removes the old class and adds the new class
+	swap_class(oldClass, newClass) {
+		this.remove_class(oldClass);
+		this.add_class(newClass);
+		return this;
+	}
 
 	// gets the first element by query from _elem
 	get_element_by_query(query) {
@@ -321,6 +317,26 @@ export class element {
 			this._elem.style[key] = style[key];
 		}
 		return this;
+	}
+
+	// sets the background image of the element
+	background_image(src) {
+		this._elem.style.backgroundImage = `url(${src})`;
+		return this;
+	}
+	// gets the background image of the element
+	get_background_image() {
+		return this._elem.style.backgroundImage;
+	}
+
+	// sets the height of the element
+	height(height) {
+		this._elem.style.height = height;
+		return this;
+	}
+	// gets the height of the element
+	get_height() {
+		return this._elem.style.height;
 	}
 }
 
