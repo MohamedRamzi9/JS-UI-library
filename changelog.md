@@ -1,6 +1,6 @@
 
 # 12-05-2025 :
-- added `height, get_height, swap_classes, clone` methods to `element` class
+- added `height, get_height, swap_classes, clone, click` methods to `element` class
 
 
 

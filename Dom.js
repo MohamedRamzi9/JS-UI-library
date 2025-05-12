@@ -316,6 +316,13 @@ export class element {
 		return to_element(this._elem.cloneNode(true));
 	}
 
+	// triggers the click event on the element
+	click() {
+		this._elem.click();
+		return this;
+	}
+
+
 	// sets the style of the element
 	style(style) {
 		for (let key in style) {
