@@ -311,6 +311,11 @@ export class element {
 			.map(elem => to_element(elem));
 	}
 
+	// clones the element
+	clone() {
+		return to_element(this._elem.cloneNode(true));
+	}
+
 	// sets the style of the element
 	style(style) {
 		for (let key in style) {
