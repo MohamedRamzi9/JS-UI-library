@@ -5,6 +5,7 @@
 		- added `login_component` class
 	- added `Menu.js` file
 		- added `menu_component` class
+			- added `toggle_menu` method
 - removed `Component.js` file
 - added `get_offset_width, get_scroll_width, get_client_width, get_offset_height, get_scroll_height, get_client_height, has_class` methods to `element` class
 - removed `get_width, get_height` methods from `element` class

@@ -35,7 +35,13 @@ export class dropdown_component {
 		this.hidden = true;
 		this.menu_elem.height("0px");
 	}
-
+	toggle_menu() {
+		if (this.is_hidden()) 
+			this.show_menu();
+		else 
+			this.hide_menu();
+	}
+	
 	get_elem() {
 		return this.container_elem.get_elem();
 	}
