@@ -1,4 +1,4 @@
-
+import * as dom from "../Dom.js";
 
 export class dropdown_component {
 	constructor() {
