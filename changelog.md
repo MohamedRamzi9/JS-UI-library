@@ -1,3 +1,4 @@
+
 # 13-05-2025 :
 - created a `Component` folder
 	- added `Login.js` file
@@ -5,7 +6,9 @@
 	- added `Menu.js` file
 		- added `menu_component` class
 - removed `Component.js` file
-
+- added `get_offset_width, get_scroll_width, get_client_width, get_offset_height, get_scroll_height, get_client_height` methods to `element` class
+- removed `get_width, get_height` methods from `element` class
+- 
 
 # 12-05-2025 :
 - added `height, get_height, swap_classes, clone, click` methods to `element` class

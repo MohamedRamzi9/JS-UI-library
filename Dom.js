@@ -340,15 +340,50 @@ export class element {
 	get_background_image() {
 		return this._elem.style.backgroundImage;
 	}
+	// sets the background color of the element
+	background_color(color) {
+		this._elem.style.backgroundColor = color;
+		return this;
+	}
+	// gets the background color of the element
+	get_background_color() {
+		return this._elem.style.backgroundColor;
+	}
+
+	// sets the width of the element
+	width(width) {
+		this._elem.style.width = width;
+		return this;
+	}
+	// gets the client width of the element in px
+	get_client_width() {
+		return this._elem.clientWidth;
+	}
+	// gets the offset width of the element in px
+	get_offset_width() {
+		return this._elem.offsetWidth;
+	}
+	// gets the scroll width of the element in px
+	get_scroll_width() {
+		return this._elem.scrollWidth;
+	}
 
 	// sets the height of the element
 	height(height) {
 		this._elem.style.height = height;
 		return this;
 	}
-	// gets the height of the element
-	get_height() {
-		return this._elem.style.height;
+	// gets the client height of the element in px
+	get_client_height() {
+		return this._elem.clientHeight;
+	}
+	// gets the offset height of the element in px
+	get_offset_height() {
+		return this._elem.offsetHeight;
+	}
+	// gets the scroll height of the element in px
+	get_scroll_height() {
+		return this._elem.scrollHeight;
 	}
 }
 
