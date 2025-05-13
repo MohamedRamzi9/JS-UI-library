@@ -1,7 +1,14 @@
+# 13-05-2025 :
+- created a `Component` folder
+	- added `Login.js` file
+		- added `login_component` class
+	- added `Menu.js` file
+		- added `menu_component` class
+- removed `Component.js` file
+
 
 # 12-05-2025 :
 - added `height, get_height, swap_classes, clone, click` methods to `element` class
-
 
 
 # 05-05-2025 :
