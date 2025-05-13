@@ -254,18 +254,18 @@ export class element {
 		return this;
 	}
 
-	// adds a class to the element
+	// adds a class to the element, if it already exists nothing happens
 	add_class(className) {
 		this._elem.classList.add(className);
 		return this;
 	}
-	// adds a list of classes to the element
+	// adds a list of classes to the element, duplicate classes are ignored
 	add_classes(classNames) {
 		for (let className of classNames)
 			this.add_class(className);
 		return this;
 	}
-	// removes a class from the element
+	// removes a class from the element, if it does not exist nothing happens
 	remove_class(className) {
 		this._elem.classList.remove(className);
 		return this;
@@ -275,11 +275,15 @@ export class element {
 		this._elem.className = '';
 		return this;
 	}
-	// removes the old class and adds the new class
+	// removes the old class and adds the new class, if the old class does not exist it will be ignored, if the new class already exists it will be ignored
 	swap_class(oldClass, newClass) {
 		this.remove_class(oldClass);
 		this.add_class(newClass);
 		return this;
+	}
+	// checks if class exists in the element
+	has_class(className) {
+		return this._elem.classList.contains(className);
 	}
 
 	// gets the first element by query from _elem
