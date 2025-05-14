@@ -1,4 +1,8 @@
 
+# 14-05-2025 :
+- added `Toggle.js` file in `Component` folder
+	- added `toggle_component` class
+
 # 13-05-2025 :
 - created a `Component` folder
 	- added `Login.js` file
