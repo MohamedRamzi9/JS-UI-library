@@ -8,6 +8,9 @@ export class dropdown_component {
 		this.menu_elem = dom.elem("menu-part").parent(this.container_elem);
 		this.hidden = false;
 	}
+	get_container_element() { return this.container_elem; }
+	get_header_element() { return this.header_elem; }
+	get_menu_element() { return this.menu_elem; }
 
 	is_hidden() { return this.hidden; }
 
