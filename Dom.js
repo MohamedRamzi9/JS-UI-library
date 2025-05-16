@@ -10,6 +10,7 @@ export class element {
 			this._elem = null;
 		else
 			this._elem = document.createElement(tagName);
+		this.data = {};
 	} 
 	// returns true if the element is not initialized
 	is_null() {

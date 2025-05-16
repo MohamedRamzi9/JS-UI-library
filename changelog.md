@@ -1,4 +1,7 @@
 
+# 16-05-2025 :
+- added `data` attribute to `element` class
+
 # 14-05-2025 :
 - renamed `Toggle.js` to `Logics.js` file
 	- added `toggle_logic, sigle_select_logic, multi_select_logic` classes
