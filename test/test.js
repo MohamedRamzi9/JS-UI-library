@@ -1,5 +1,5 @@
 import * as dom from '../Dom.js';
-import { toggle_component } from "../Components/Toggle.js";
+import { toggle_component } from "../Components/Logics.js";
 
 dom.on_page_load(() => {
 	let body = dom.get_body();

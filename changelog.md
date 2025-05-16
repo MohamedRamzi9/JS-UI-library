@@ -1,7 +1,7 @@
 
 # 14-05-2025 :
-- added `Toggle.js` file in `Component` folder
-	- added `toggle_component` class
+- renamed `Toggle.js` to `Logics.js` file
+	- added `toggle_logic, sigle_select_logic, multi_select_logic` classes
 - added `get_container_element, get_header_element, get_menu_element` methods to `dropdown_component` class
 
 # 13-05-2025 :
