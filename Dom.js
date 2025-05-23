@@ -360,6 +360,10 @@ export class element {
 		this._elem.style.width = width;
 		return this;
 	}
+	// gets the width of the element
+	get_width() {
+		return this._elem.style.width;
+	}
 	// gets the client width of the element in px
 	get_client_width() {
 		return this._elem.clientWidth;
@@ -377,6 +381,10 @@ export class element {
 	height(height) {
 		this._elem.style.height = height;
 		return this;
+	}
+	// gets the height of the element
+	get_height() {
+		return this._elem.style.height;
 	}
 	// gets the client height of the element in px
 	get_client_height() {

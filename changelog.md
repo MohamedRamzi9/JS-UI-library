@@ -1,4 +1,8 @@
 
+
+# 23-05-2025 :
+- added `get_width, get_height` methods to `element` class
+
 # 16-05-2025 :
 - added `data` attribute to `element` class
 
