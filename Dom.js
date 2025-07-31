@@ -398,6 +398,11 @@ export class element {
 	get_scroll_height() {
 		return this._elem.scrollHeight;
 	}
+
+	// get the rectangle bounding box of the element
+	get_bounding_box() {
+		return this._elem.getBoundingClientRect();
+	}
 }
 
 // a helper function creating new element
