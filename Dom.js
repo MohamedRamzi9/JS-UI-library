@@ -10,7 +10,6 @@ export class element {
 			this._elem = null;
 		else
 			this._elem = document.createElement(tagName);
-		this.data = {};
 	} 
 	// returns true if the element is not initialized
 	is_null() {
@@ -103,7 +102,7 @@ export class element {
 		return this._elem.getAttribute(name);
 	}
 	
-	// sets a custom attribute with the given name and value to the element
+	// sets a custom attribute with the given name and value of any type to the element
 	// must be careful with name conflicts with existing attributes
 	data(name, value) {
 		this._elem[name] = value;
