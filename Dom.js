@@ -102,6 +102,17 @@ export class element {
 	get_attr(name) {
 		return this._elem.getAttribute(name);
 	}
+	
+	// sets a custom attribute with the given name and value to the element
+	// must be careful with name conflicts with existing attributes
+	data(name, value) {
+		this._elem[name] = value;
+		return this;
+	}
+	get_data(name) {
+		return this._elem[name];
+	}
+
 	// sets the selected attribute of the element
 	selected(selected) {
 		this._elem.selected = selected;
