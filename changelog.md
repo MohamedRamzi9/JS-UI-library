@@ -1,4 +1,6 @@
 
+# 05-08-2025 :
+- added `data, get_data` methods to `element` class
 
 # 23-05-2025 :
 - added `get_width, get_height` methods to `element` class

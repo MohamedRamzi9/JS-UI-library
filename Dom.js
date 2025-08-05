@@ -103,13 +103,15 @@ export class element {
 	}
 	
 	// sets a custom attribute with the given name and value of any type to the element
-	// must be careful with name conflicts with existing attributes
+	// this function adds '_' prefix to the name to avoid conflicts with existing attributes
 	data(name, value) {
-		this._elem[name] = value;
+		this._elem[`_${name}`] = value;
 		return this;
 	}
+	// gets a custom attribute with the given name from the element
+	// this function adds '_' prefix to the name same as data function
 	get_data(name) {
-		return this._elem[name];
+		return this._elem[`_${name}`];
 	}
 
 	// sets the selected attribute of the element
