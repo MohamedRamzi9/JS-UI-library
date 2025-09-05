@@ -56,6 +56,26 @@ export class element {
 		return this._elem.value;
 	}
 
+	// sets the minimum value of the element
+	min(min) {
+		this._elem.min = min;
+		return this;
+	}
+	// gets the minimum value of the element
+	get_min() {
+		return this._elem.min;
+	}
+
+	// sets the maximum value of the element
+	max(max) {
+		this._elem.max = max;
+		return this;
+	}
+	// gets the maximum value of the element
+	get_max() {
+		return this._elem.max;
+	}
+
 	// sets the placeholder of the element
 	placeholder(placeholder) {
 		this._elem.placeholder = placeholder;

@@ -1,4 +1,8 @@
 
+# 05-09-2025 :
+- added `min, get_min, max, get_max` methods to `element` class
+
+
 # 05-08-2025 :
 - added `data, get_data` methods to `element` class
 
