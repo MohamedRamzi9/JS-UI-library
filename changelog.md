@@ -1,4 +1,7 @@
 
+# 08-11-2025 :
+- renamed `event` method to `add_event` in `element` class in `Dom.js` file
+
 # 05-09-2025 :
 - added `min, get_min, max, get_max` methods to `element` class
 

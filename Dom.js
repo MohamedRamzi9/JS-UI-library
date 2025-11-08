@@ -167,7 +167,7 @@ export class element {
 	}
 
 	// adds an event listener to the element
-	event(event, func) {
+	add_event(event, func) {
 		this._elem.addEventListener(event, func);
 		return this;
 	}
@@ -439,9 +439,7 @@ export class element {
 
 // a helper function creating new element
 // equivilant to : new element(tagName)
-export function elem(tagName='div') {
-	return new element(tagName);
-}
+export function elem(tagName='div') { return new element(tagName); }
 export let div = () => elem('div');
 export let button = () => elem('button');
 export let input = () => elem('input');
