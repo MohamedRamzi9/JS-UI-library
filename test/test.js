@@ -1,9 +1,8 @@
 import * as dom from '../Dom.js';
 
-class StaticComponent {
-	constructor(element = null) {
-		this.element = element ? element : dom.div();
-		this.parent = null;
+class DOMComponent {
+	constructor(element) {
+		this.element = element;
 		this.children = [];
 	}
 
@@ -24,7 +23,7 @@ class MyComponent {
 	static value = 1;
 	constructor(parent) {
 		this.parent = parent;
-		this.element = dom.button().event('click', () => {
+		this.element = dom.button().add_event('click', () => {
 			MyComponent.value += 1;
 			this.parent.render();
 		});
@@ -38,7 +37,7 @@ class MyComponent {
 dom.on_page_load(() => {
 	let body = dom.get_body();
 
-	let main_component = new StaticComponent(body);
+	let main_component = new DOMComponent(body);
 	let component = new MyComponent(main_component);
 
 	main_component.add_child(component);

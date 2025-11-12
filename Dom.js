@@ -171,6 +171,14 @@ export class element {
 		this._elem.addEventListener(event, func);
 		return this;
 	}
+	
+	// sets content editable attribute of the element, editable is a boolean
+	content_editable(editable) {
+		this._elem.contentEditable = editable;
+		return this;
+	}
+	// get the content editable attribute of the element as a boolean
+	get_content_editable() { return this._elem.contentEditable === "true"; }
 
 	// sets the first child of the element
 	first_child(child) {
@@ -435,6 +443,7 @@ export class element {
 	get_bounding_box() {
 		return this._elem.getBoundingClientRect();
 	}
+
 }
 
 // a helper function creating new element

@@ -1,4 +1,7 @@
 
+# 12-11-2025 :
+- added `content_editable, get_content_editable` methods to `element` class in `Dom.js` file
+
 # 08-11-2025 :
 - renamed `event` method to `add_event` in `element` class in `Dom.js` file
 
