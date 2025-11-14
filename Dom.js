@@ -268,6 +268,15 @@ export class element {
 		return this._elem.children.length;
 	}
 
+	// get the index of a child element, or -1 if not found
+	get_child_index(child) {
+		let children = this.get_children();
+		for (let [index, elem] of children.entries())
+			if (elem._elem === child._elem)
+				return index;
+		return -1;
+	}
+
 	// add this element as a child to another element
 	parent(parent) {
 		parent.add_child(this);
